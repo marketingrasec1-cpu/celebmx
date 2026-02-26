@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quién es Adrianovlogs, el influencer de México que ahora quedó envuelto en un escándalo | celeb.mx</title>
+    <style>
+        /* Variables de color para fácil modificación */
+        :root {
+            --primary-color: #ff2a5f;
+            --text-dark: #1a1a1a;
+            --text-light: #666;
+            --bg-light: #f4f4f4;
+            --border-color: #eaeaea;
+        }
+
+        /* Reseteo y tipografía */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-dark);
+            background-color: #fff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* --- HEADER --- */
+        .site-header {
+            background: #000;
+            color: #fff;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            color: #fff;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .main-nav a {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .main-nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* --- LAYOUT PRINCIPAL --- */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 5%;
+            display: grid;
+            grid-template-columns: 2.5fr 1fr;
+            gap: 40px;
+        }
+
+        /* --- ARTÍCULO --- */
+        .article-category {
+            color: var(--primary-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 13px;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        .article-title {
+            font-size: 2.8rem;
+            line-height: 1.1;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .article-meta {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .article-image {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .image-caption {
+            font-size: 13px;
+            color: var(--text-light);
+            text-align: right;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .article-content {
+            font-size: 1.15rem;
+            color: #333;
+        }
+
+        .article-content p {
+            margin-bottom: 20px;
+        }
+
+        .article-lead {
+            font-weight: 600;
+            font-size: 1.3rem;
+            color: #000;
+        }
+
+        /* --- SIDEBAR (FEED DE NOTICIAS) --- */
+        .sidebar {
+            background: var(--bg-light);
+            padding: 25px;
+            border-radius: 8px;
+            height: fit-content;
+        }
+
+        .sidebar-title {
+            font-size: 18px;
+            text-transform: uppercase;
+            font-weight: 800;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        .feed-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+
+        .feed-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .feed-image {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .feed-text h4 {
+            font-size: 14px;
+            line-height: 1.3;
+            margin-bottom: 5px;
+        }
+
+        .feed-text h4 a:hover {
+            color: var(--primary-color);
+        }
+
+        .feed-text span {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        /* --- WIDGET CHATANGO --- */
+        .chat-widget {
+            position: fixed;
+            bottom: 0;
+            right: 20px;
+            width: 300px;
+            height: 400px;
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 10px 10px 0 0;
+            box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            z-index: 1000;
+        }
+
+        .chat-header {
+            background: var(--primary-color);
+            color: #fff;
+            padding: 10px 15px;
+            font-weight: bold;
+            border-radius: 10px 10px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .chat-messages {
+            flex-grow: 1;
+            padding: 15px;
+            overflow-y: auto;
+            background: #fafafa;
+            font-size: 13px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .msg {
+            background: #fff;
+            padding: 8px 10px;
+            border-radius: 5px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .msg span.user { font-weight: bold; color: var(--primary-color); }
+        .msg span.time { font-size: 10px; color: #999; float: right; margin-top: 3px;}
+
+        .chat-input {
+            display: flex;
+            border-top: 1px solid var(--border-color);
+            padding: 10px;
+            background: #fff;
+        }
+
+        .chat-input input {
+            flex-grow: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .chat-input button {
+            background: var(--text-dark);
+            color: #fff;
+            border: none;
+            padding: 0 15px;
+            margin-left: 5px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* --- FOOTER --- */
+        .site-footer {
+            background: #111;
+            color: #fff;
+            padding: 40px 5%;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .footer-links {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .article-title {
+                font-size: 2rem;
+            }
+            .main-nav {
+                display: none; 
+            }
+            .chat-widget {
+                width: 100%;
+                right: 0;
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <a href="#" class="logo">celeb<span>.mx</span></a>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Noticias</a></li>
+                <li><a href="#">Música</a></li>
+                <li><a href="#">Entrevistas</a></li>
+                <li><a href="#">Trending</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <main class="article">
+            <span class="article-category">Tendencias</span>
+            <h1 class="article-title">Quién es Adrianovlogs, el influencer de México que ahora quedó envuelto en un escándalo</h1>
+            
+            <div class="article-meta">
+                <span>Por <strong>Redacción celeb.mx</strong></span> • <span>julio 05, 2017</span>
+            </div>
+
+            <img src="https://i.ibb.co/jqxrtVj/Captura-de-pantalla-2026-02-26-a-la-s-2-07-39-a-m.png" alt="Adrianovlogs con cajas de juguetes y fondo con manchas rojas" class="article-image">
+            <div class="image-caption">El youtuber mexicano tiene 16 años.</div>
+
+            <div class="article-content">
+                <p class="article-lead">El youtuber más popular de su país ahora quedó metido en otra polémica por una publicación con una foto "racista".</p>
+                
+                <p>El youtuber mexicano <strong>Adrianovlogs</strong> está en boca de todos. En las últimas horas, se volvió tendencia en Twitter y no justamente por algo positivo.</p>
+                
+                <p>El mexicano dio a conocer un video en su red social principal Vine promocionando una serie de productos, lo que rápidamente desató críticas entre los usuarios que interpretaron el contenido y la escenografía como inapropiados y ofensivos.</p>
+                
+                <p>A sus 16 años, el creador de contenido ya ha enfrentado diversas situaciones mediáticas, pero este reciente incidente ha escalado rápidamente en foros y redes sociales, donde piden que ofrezca disculpas públicas por la imagen que muchos han calificado de insensible.</p>
+            </div>
+        </main>
+
+        <aside class="sidebar">
+            <h3 class="sidebar-title">Lo más leído</h3>
+
+            <article class="feed-item">
+                <img src="https://placehold.co/80/333/fff?text=Música" alt="Thumbnail" class="feed-image">
+                <div class="feed-text">
+                    <h4><a href="#">'Despacito' sigue rompiendo récords y apunta a ser el video más visto de YouTube</a></h4>
+                    <span>Hace 5 horas</span>
+                </div>
+            </article>
+
+            <article class="feed-item">
+                <img src="https://placehold.co/80/333/fff?text=Cine" alt="Thumbnail" class="feed-image">
+                <div class="feed-text">
+                    <h4><a href="#">Primeras reacciones a Spider-Man: Homecoming: ¡El mejor Peter Parker!</a></h4>
+                    <span>Ayer</span>
+                </div>
+            </article>
+
+            <article class="feed-item">
+                <img src="https://placehold.co/80/333/fff?text=TV" alt="Thumbnail" class="feed-image">
+                <div class="feed-text">
+                    <h4><a href="#">Game of Thrones estrena el tráiler final de su séptima temporada</a></h4>
+                    <span>Ayer</span>
+                </div>
+            </article>
+        </aside>
+
+    </div>
+
+    <div class="chat-widget">
+        <div class="chat-header">
+            <span>🔴 celeb.mx Live Chat</span>
+            <span style="font-size: 12px; font-weight: normal;">—</span>
+        </div>
+        <div class="chat-messages">
+            <div class="msg">
+                <span class="user">PopFan99:</span> Alguien vio el nuevo vine de Adriano? <span class="time">14:02</span>
+            </div>
+            <div class="msg">
+                <span class="user">MusicLover_MX:</span> Sí, la verdad se pasó esta vez. En Twitter lo están acabando. <span class="time">14:05</span>
+            </div>
+            <div class="msg">
+                <span class="user">GossipGirl23:</span> Siempre está en polémicas, ya no me sorprende. 🙄 <span class="time">14:10</span>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" placeholder="Escribe un mensaje...">
+            <button>Enviar</button>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <h2>celeb<span>.mx</span></h2>
+        <div class="footer-links">
+            <a href="#">Sobre nosotros</a>
+            <a href="#">Contacto</a>
+            <a href="#">Política de Privacidad</a>
+            <a href="#">Términos de Uso</a>
+        </div>
+        <p>© 2017 celeb.mx. Todos los derechos reservados. Las imágenes son propiedad de sus respectivos dueños.</p>
+    </footer>
+
+    <script>
+        document.querySelector('button').addEventListener('click', function() {
+            const input = document.querySelector('input');
+            const message = input.value;
+            if(message.trim() !== '') {
+                const chatContainer = document.querySelector('.chat-messages');
+                const newMsg = document.createElement('div');
+                newMsg.className = 'msg';
+                const now = new Date();
+                newMsg.innerHTML = `<span class="user">Tú:</span> ${message} <span class="time">${now.getHours()}:${now.getMinutes() < 10 ? '0' : ''}${now.getMinutes()}</span>`;
+                chatContainer.appendChild(newMsg);
+                input.value = '';
+                chatContainer.scrollTop = chatContainer.scrollHeight; 
+            }
+        });
+        
+        document.querySelector('.chat-header').addEventListener('click', function() {
+            const chatBox = document.querySelector('.chat-widget');
+            if (chatBox.style.height === '40px') {
+                chatBox.style.height = '400px';
+            } else {
+                chatBox.style.height = '40px';
+            }
+        });
+    </script>
+</body>
+</html>
